@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    
+    <!-- Header -->
+    <title>HDI 2014</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:bold, italic">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+
+    <!-- JS libraries -->
+    <script src="d3\d3.v3.js"></script>
+    <script src="d3\d3.tip.v0.6.3.js"></script> 
+
+    <!-- Data -->
+    <script src= "hdidata.json"></script>
+    <script src = "mapdata.json"></script>
+
+
+    <!-- Javascript for viz -->
+    <script src="javascript.js" type="text/javascript" ></script>
+
+</head>
+
+
+
+
+
+<body>
+
+    
+    <!-- Header -->
+    <div id = "myHeader">
+        <div id = "mainTitle"><a href="#"><h1>Human Development Index 2014</h1></a></div>
+        <div id = "rightMenu">
+            <div id="menuItem">
+                <a href="#description">Description</a>
+            </div>
+            <div id="menuItem">
+                <a href="#about">About HDI</a>
+            </div>
+            <div id="menuItem">
+                <a href="#dataSources">Data sources</a>
+            </div>
+          <!--   <div id="menuItem">
+                <a href="#download">Download program files</a>
+            </div> -->
+        </div>
+    </div>
+
+
+    <!-- Viz -->
+    <div id = "All">
+        <div id="MapAndGraphs" >
+            <div id = "Map"></div>
+            <div id = "Graphs">
+                <div id = "UpperGraphs">
+                    <div id = "graphWrapper">
+                        <div id = "graph1"></div></div>
+                    <div id = "graphWrapper"><div id = "graph2"></div></div>
+                </div>
+                <div id = "LowerGraphs">
+                    <div id = "graphWrapper"><div id = "graph3"></div></div>
+                    <div id = "graphWrapper"><div id = "graph4"></div></div>
+                </div>
+            </div>
+        </div>
+        <div id = "DotChartAndTitle">
+            <div id="DotChartAndTitleContent">
+                <h2>Population</h2>
+               <div id ="DotChart"> </div>
+            </div>
+        </div>  
+    </div>
+
+
+    <!-- Content -->
+    <!-- Content: viz description -->
+    <div id="section">
+        <a id="description"></br></br></br></br></a>
+        <div id="sectionHeader">
+            <h2>Visualization description</h2>
+        </div>
+        <div id= "sectionText">
+            <p>This visualization has three interconnected parts.</p>
+            <div id = "descriptionBox">
+                <div id = "descriptionSectionBox">
+                    <h2>Map</h2>
+                    <p > <b> What is the level of human development and inequality of a country in 2014?  </b></p>
+                    <div id = "imageWrapper"><img src = "Map.PNG" width = "100%"></div>
+                    <p> Human Development Index (HDI) level of each country is colour-coded. Countries in the same region share the same colour family but the colour grows darker as HDI decreases. The tooltip shows the value of HDI and inequality-adjusted HDI, life expectancy index, education index and icnome index.</p>
+                </div>
+                <div id = "descriptionSectionBox" style = "color: #e6e6e6">
+                    <h2>Population chart</h2>
+                    <p ><b>How is the world population distributed in terms of human development? </b> </p>
+                    <div id = "imageWrapper"><img src = "Population.png" width="100%" > </div>
+                    <p>Countries are assigned into four groups: low, medium, high and very high human development. But an important question is how the world population is distributed into these four groups. In the population chart, HDI increases from left to right. Every person in the chart represents 5 million people. Countries with a population less than 5 million are represented by one icon, while countries for which there is no HDI data are represented in grey on the left side of the box.</p>
+                </div>
+                <div id = "descriptionSectionBox" style = "color: #e6e6e6">
+                    <h2>Line charts</h2>
+                    <p > <b> What progress have countries made over the last three decades? </b> </p>                    
+                    <div id = "imageWrapper"><div align = "center"><img src = "lineCharts.jpg" width="60%"></div></div>
+                    <p>The charts show what progress countries have made in terms of HDI and its components (life expectancy, expected years of schooling and GNI per capita) from 1980 to 2014. The colours of countries are the same as they appeared on the map. The data values covering from 1980 to 2013 were from HDI data release in 2014 and hence there are slight discrepancies from the HDI trends data in Human Development Report 2015 (see <i><a href="http://hdr.undp.org/en/faq-page/human-development-index-hdi#t292n2415">HDI FAQ</a></i> for more details about data revisons made in HDR 2015). However, as trend data in 2015 report is only available for few selected years (1990, 2000, 2010, 2011, 2012, 2013 and 2014) and data on three components (GNI, life expectancy and years of schooling) are not available, HDI data released in 2014 were used for the line charts up to 2013 to show the historical trend. To see the difference between historic data between HDR 2014 and HDR 2015, visit <i><a href = "Visualizing HDI-line charts.html"> here</a></i>.</p>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+
+    <!-- Content: about HDI -->
+    <div id="section">
+        <a id="about"></br></br></br></br></a>
+        <div id="sectionHeader">
+            <h2>About human development indices</h2>
+        </div>
+        <div id= "sectionText">
+            <div id = "textBox">            
+                <h2>Human Development Index</h2>
+                <p>The Human Development Report is published every year since 1990. It looks at countries’ development beyond economic performance as measured by HDI. This single statistic summarizes a country’s achievements along three key dimensions of human development. The HDI is the geometric mean of normalized indices for each of the three dimensions:
+                    <ol>
+                        <li><b>Long and healthy life</b> assessed by life expectancy at birth, using a minimum value of 20 years and maximum value of 85 years.</li>
+                        <li><b>Being knowledgeable</b> measured by mean of years of schooling for adults aged 25 years and expected years of schooling for children of school entering age. The indicators are normalized using a minimum value of zero and maximum aspirational values of 15 and 18 years, respectively. The two indices are combined into an education index using arithmetic mean.</li>
+                        <li><b>A decent standard of living </b> measured by gross national income per capita. The goalpost for minimum income is $100 (PPP) and the maximum is $75,000 (PPP). The HDI uses the logarithm of income to reflect the diminishing importance of income with increasing GNI.</li>
+                    </ol>
+                </p>
+                <h2>Inequality-adjusted Human Development Index</h2>
+                <p>Large disparities within countries in the three dimensions increase the vulnerability of the marginalized groups. Therefore, the Inequality-adjusted Human Development Index (IHDI) takes into account not only the average achievements of a country on health, education and income, but also how those achievements are distributed among its population by adjusting average value of each dimension according to its level of inequality.</p>
+                <h2>Human development classification</h2>
+                <p>HDI classification is based on fixed cut-off points, which are derived from the quartiles of distributions of component indicators. The cut-off points are:
+                    <ol>
+                        <li><b>less than 0.550</b> for <b>low</b> human development</li>
+                        <li><b>0.550–0.699</b> for <b>medium</b> human development</li>
+                        <li><b>0.700–0.799</b> for <b>high</b> human development</li>
+                        <li><b>0.800 or greater</b> for <b?very high</b> human development</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Content: data sources -->
+    <div id="section">
+        <a id="dataSources"></br></br></br></br></a>
+        <div id="sectionHeader">
+            <h2>Data sources</h2>
+        </div>
+        <div id = "textBox">
+            <div id= "sectionText">
+                <p>
+                    <ul>
+                        <li>HDI data: <i><a href="http://hdr.undp.org/en/data">United Nations Development Programme</a></i></li>
+                        <li>HDI description: <i><a href="http://hdr.undp.org/en/content/human-development-index-hdi"> United Nations Development Programme</a></i> and <i><a href="http://hdr.undp.org/sites/default/files/hdr14_technical_notes.pdf"> Human Development Report 2014 - Technical notes</a></i>
+                        <li>Population data: <i><a href = "http://www.un.org/esa/population/"> World Population Prospects: The 2015 Revision, United Nations Population Division </a></i></li>
+                        <li>Regional assignment of countries: <i><a href="http://unstats.un.org/unsd/methods/m49/m49regin.htm">United Nations Statistics Division</a></i></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+	
+<script>
+
+    js()
+
+</script>
+	
+
+
+</html>
